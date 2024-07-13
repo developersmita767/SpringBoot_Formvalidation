@@ -1,0 +1,27 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Http methods</title>
+		<style>
+			.error {
+				color: red;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<h1>Students Form</h1>
+		<form th:action="@{/display/show}" th:object="${student}" method="post">
+			Name: <input type="text" th:field="*{name}" />
+			 <span th:errors="*{name}" class="error"></span>
+			 <br/>
+			Age: <input type="text" th:field="*{age}" /> 
+			<span th:errors="*{age}" class="error"></span><br/>
+			Address: <input type="text" th:field="*{address}" /> 
+			<span th:errors="*{address}" class="error"> </span><br/>
+			<input type="submit" value="SEND" />
+		</form>
+	</body>
+	
+</html>
+
+
